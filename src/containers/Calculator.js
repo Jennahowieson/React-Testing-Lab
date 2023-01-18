@@ -99,8 +99,8 @@ function App() {
       setCalculatedTotal(calculatedNumber);
     }
     else {
-      setRunningTotal(0);
-      setCalculatedTotal(0);
+      setRunningTotal("error");
+      setCalculatedTotal("error");
     }
   }
 
