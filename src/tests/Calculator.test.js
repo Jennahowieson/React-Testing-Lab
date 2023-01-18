@@ -113,5 +113,18 @@ it ('should clear the running total without affecting the calculation',()=>{
   const runningTotal = container.getByTestId('running-total');
   expect(runningTotal.textContent).toEqual('4');
 })
+    
+   it ('should return "error" when trying to divide by 0',()=>{
+    const button2 = container.getByTestId('number2');
+    const divideButton = container.getByTestId('operator-divide');
+    const button0 = container.getByTestId('number0');
+    const equalsButton = container.getByTestId('operator-equals');
+    const runningTotal = container.getByTestId('running-total');
+    fireEvent.click(button2);
+    fireEvent.click(divideButton);
+    fireEvent.click(button0);
+    fireEvent.click(equalsButton);
+    expect(runningTotal.textContent).toEqual("error");
+  })
 
 })
